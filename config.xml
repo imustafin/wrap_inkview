@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<ewg_config name="inkview">
+
+  <rule_list>
+  	  <!-- Ignore everything that starts with an underscore. -->
+    <rule>
+      <match>
+          <identifier name="_.*"/>  
+      </match>
+       <wrapper type="none">
+      </wrapper>
+    </rule>
+
+
+    	  <!-- Include functions, structs, unions, macros, etc-->
+    	  <!-- To learn more read: https://github.com/eiffel-wrap-c/WrapC/blob/master/doc/Readme.md#config_file-->
+
+     
+      <rule>
+        <match>
+          <identifier name="InkViewMain"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule>  
+      
+      <rule>
+        <match>
+          <identifier name="iv_handler"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule>  
+      
+      <rule>
+        <match>
+          <identifier name="ClearScreen"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule>  
+
+      <rule>
+        <match>
+          <identifier name="FillArea"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule>  
+      
+      <rule>
+        <match>
+          <identifier name="FullUpdate"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule>  
+
+      <rule>
+        <match>
+          <identifier name="CloseApp"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule>  
+
+     <!-- And the rest should be ignored -->
+    <rule>
+      <match>
+      </match>
+       <wrapper type="none">
+      </wrapper>
+    </rule>
+
+
+  </rule_list>
+
+</ewg_config>

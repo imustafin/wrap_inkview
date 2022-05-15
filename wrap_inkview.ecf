@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-20-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-20-0 http://www.eiffel.com/developers/xml/configuration-1-20-0.xsd" name="wrap_inkview" uuid="3A975DDB-60B0-4972-B77D-A39234E4BF9B" library_target="wrap_inkview">
+	<target name="wrap_inkview">
+		<root all_classes="true"/>
+		<file_rule>
+			<exclude>/CVS$</exclude>
+			<exclude>/EIFGENs$</exclude>
+			<exclude>/\.git$</exclude>
+			<exclude>/\.svn$</exclude>
+		</file_rule>
+		<option warning="true" manifest_array_type="mismatch_warning">
+			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
+		</option>
+		<setting name="console_application" value="true"/>
+		<setting name="dead_code_removal" value="feature"/>
+		<capability>
+			<concurrency support="none"/>
+		</capability>
+		<external_include location="$ECF_CONFIG_PATH/generated_wrapper/c/include"/>
+		<external_include location="=/usr/include/freetype2"/>
+		<external_library location="$ECF_CONFIG_PATH/C/spec/$(ISE_PLATFORM)/lib/eif_inkview.a"/>
+		<pre_compile_action working_directory=".\generated_wrapper\c\src\" command="finish_freezing -library" succeed="true">
+		</pre_compile_action>
+		<library name="base" location="$ISE_LIBRARY\library\base\base.ecf"/>
+		<cluster name="wrap_inkview" location=".\" recursive="true"/>
+	</target>
+</system>
