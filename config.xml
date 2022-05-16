@@ -119,6 +119,30 @@
       </wrapper>
     </rule>
 
+    <rule>
+      <match>
+        <identifier name="DrawRect(Round)?"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
+        <identifier name="DrawTextRect"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
+        <identifier name="(Open|Close|Set)Font"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
     <!-- And the rest should be ignored -->
     <rule>
       <match>

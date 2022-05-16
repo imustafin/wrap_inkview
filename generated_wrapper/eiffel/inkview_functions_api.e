@@ -88,12 +88,62 @@ feature -- Access
 			]"
 		end
 
+	draw_rect (x: INTEGER; y: INTEGER; w: INTEGER; h: INTEGER; color: INTEGER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				DrawRect ((int)$x, (int)$y, (int)$w, (int)$h, (int)$color);
+			]"
+		end
+
+	draw_rect_round (anonymous_1: INTEGER; anonymous_2: INTEGER; anonymous_3: INTEGER; anonymous_4: INTEGER; anonymous_5: INTEGER; anonymous_6: INTEGER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				DrawRectRound ((int)$anonymous_1, (int)$anonymous_2, (int)$anonymous_3, (int)$anonymous_4, (int)$anonymous_5, (int)$anonymous_6);
+			]"
+		end
+
 	fill_area (x: INTEGER; y: INTEGER; w: INTEGER; h: INTEGER; color: INTEGER)
 		external
 			"C inline use <inkview.h>"
 		alias
 			"[
 				FillArea ((int)$x, (int)$y, (int)$w, (int)$h, (int)$color);
+			]"
+		end
+
+	open_font (name: POINTER; size: INTEGER; aa: INTEGER): POINTER
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				return OpenFont ((char const*)$name, (int)$size, (int)$aa);
+			]"
+		end
+
+	close_font (f: IFONT_S_STRUCT_API) 
+		do
+			c_close_font (f.item)
+		ensure
+			instance_free: class
+		end
+
+	set_font (font: IFONT_S_STRUCT_API; color: INTEGER) 
+		do
+			c_set_font (font.item, color)
+		ensure
+			instance_free: class
+		end
+
+	draw_text_rect (x: INTEGER; y: INTEGER; w: INTEGER; h: INTEGER; s: POINTER; flags: INTEGER): POINTER
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				return DrawTextRect ((int)$x, (int)$y, (int)$w, (int)$h, (char const*)$s, (int)$flags);
 			]"
 		end
 
@@ -144,6 +194,24 @@ feature -- Externals
 		alias
 			"[
 				InkViewMain ((iv_handler)$h);
+			]"
+		end
+
+	c_close_font (f: POINTER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				CloseFont ((ifont*)$f);
+			]"
+		end
+
+	c_set_font (font: POINTER; color: INTEGER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				SetFont ((ifont const*)$font, (int)$color);
 			]"
 		end
 
