@@ -95,6 +95,22 @@
       </wrapper>
     </rule>
 
+    <rule>
+      <match>
+        <identifier name="ScreenWidth"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
+        <identifier name="ScreenHeight"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
     <!-- And the rest should be ignored -->
     <rule>
       <match>

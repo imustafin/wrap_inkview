@@ -25,6 +25,24 @@ feature -- Access
 			]"
 		end
 
+	screen_width: INTEGER
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				return ScreenWidth ();
+			]"
+		end
+
+	screen_height: INTEGER
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				return ScreenHeight ();
+			]"
+		end
+
 	clear_screen
 		external
 			"C inline use <inkview.h>"
