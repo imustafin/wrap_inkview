@@ -14,7 +14,7 @@ $spitshell >Makefile <<!GROK!THIS!
 SHELL = /bin/sh
 CC= $cc
 AR = ar rc
-CFLAGS =-I{../SDK_6.3.0-5.19/SDK-A13/usr/arm-obreey-linux-gnueabi/sysroot,=}/usr/include/freetype2/ $optimize $ccflags $large -I$rt_include -I../../../generated_wrapper/c/include -I../include `pkg-config --cflags inkview` -I /home/ilgiz/wrap_inkview/../SDK_6.3.0-5.19/SDK-A13/usr/arm-obreey-linux-gnueabi/sysroot/usr/local/include  
+CFLAGS =-I$SDK_SYSROOT/usr/include/freetype2/ $optimize $ccflags $large -I$rt_include -I../../../generated_wrapper/c/include -I../include `pkg-config --cflags inkview` -I /home/ilgiz/SDK_6.3.0-5.19/SDK-A13/usr/arm-obreey-linux-gnueabi/sysroot/usr/local/include  
 LDFLAGS = $ldflags
 LIBS = $libs
 MAKE = $make

@@ -4,7 +4,7 @@ OUTDIR= .
 INDIR= .
 CC = $cc
 OUTPUT_CMD = $output_cmd
-CFLAGS = -I{../SDK_6.3.0-5.19/SDK-A13/usr/arm-obreey-linux-gnueabi/sysroot,=}/usr/include/freetype2/ -I"$rt_include" -I $(TOP)$(DIR)include -I $(TOP)$(DIR)$(TOP)$(DIR)$(TOP)$(DIR)generated_wrapper$(DIR)c$(DIR)include -I /home/ilgiz/wrap_inkview/../SDK_6.3.0-5.19/SDK-A13/usr/arm-obreey-linux-gnueabi/sysroot/usr/local/include  
+CFLAGS = -I$SDK_SYSROOT/usr/include/freetype2/ -I"$rt_include" -I $(TOP)$(DIR)include -I $(TOP)$(DIR)$(TOP)$(DIR)$(TOP)$(DIR)generated_wrapper$(DIR)c$(DIR)include -I /home/ilgiz/SDK_6.3.0-5.19/SDK-A13/usr/arm-obreey-linux-gnueabi/sysroot/usr/local/include  
 JCFLAGS = $(CFLAGS) $optimize $ccflags
 JMTCFLAGS = $(CFLAGS) $optimize $mtccflags
 JILCFLAGS = $(CFLAGS) $optimize $mtccflags  -DEIF_IL_DLL

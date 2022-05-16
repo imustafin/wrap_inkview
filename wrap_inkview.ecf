@@ -17,7 +17,8 @@
 			<concurrency support="none"/>
 		</capability>
 		<external_include location="$ECF_CONFIG_PATH/generated_wrapper/c/include"/>
-		<external_include location="=/usr/include/freetype2"/>
+		<external_include location="$(SDK_SYSROOT)/usr/include/freetype2"/>
+    <external_library location="$(SDK_SYSROOT)/usr/local/lib/libinkview.so"/>
 		<external_library location="$ECF_CONFIG_PATH/C/spec/$(ISE_PLATFORM)/lib/eif_inkview.a"/>
 		<pre_compile_action working_directory=".\generated_wrapper\c\src\" command="finish_freezing -library" succeed="true">
 		</pre_compile_action>
