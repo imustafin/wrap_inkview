@@ -43,6 +43,42 @@ feature -- Access
 			]"
 		end
 
+	set_orientation (n: INTEGER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				SetOrientation ((int)$n);
+			]"
+		end
+
+	get_orientation: INTEGER
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				return GetOrientation ();
+			]"
+		end
+
+	set_global_orientation (n: INTEGER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				SetGlobalOrientation ((int)$n);
+			]"
+		end
+
+	get_global_orientation: INTEGER
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				return GetGlobalOrientation ();
+			]"
+		end
+
 	clear_screen
 		external
 			"C inline use <inkview.h>"

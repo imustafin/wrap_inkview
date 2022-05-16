@@ -111,6 +111,14 @@
       </wrapper>
     </rule>
 
+    <rule>
+      <match>
+        <identifier name="(Set|Get)(Global)?Orientation"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
     <!-- And the rest should be ignored -->
     <rule>
       <match>
