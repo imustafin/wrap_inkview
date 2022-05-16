@@ -52,6 +52,36 @@ feature -- Access
 			]"
 		end
 
+	set_panel_type (type: INTEGER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				SetPanelType ((int)$type);
+			]"
+		end
+
+	draw_panel (icon: IBITMAP_S_STRUCT_API; text: STRING_8; title: STRING_8; percent: INTEGER): INTEGER 
+		local
+			text_c_string: C_STRING
+			title_c_string: C_STRING
+		do
+			create text_c_string.make (text)
+			create title_c_string.make (title)
+			Result := c_draw_panel (icon.item, text_c_string.item, title_c_string.item, percent)
+		ensure
+			instance_free: class
+		end
+
+	panel_height: INTEGER
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				return PanelHeight ();
+			]"
+		end
+
 feature -- Externals
 
 	c_ink_view_main (h: POINTER)
@@ -60,6 +90,15 @@ feature -- Externals
 		alias
 			"[
 				InkViewMain ((iv_handler)$h);
+			]"
+		end
+
+	c_draw_panel (icon: POINTER; text: POINTER; title: POINTER; percent: INTEGER): INTEGER
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				return DrawPanel ((ibitmap const*)$icon, (char const*)$text, (char const*)$title, (int)$percent);
 			]"
 		end
 

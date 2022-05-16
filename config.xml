@@ -63,6 +63,38 @@
       </wrapper>
     </rule>
 
+    <rule>
+      <match>
+        <identifier name="SetPanelType"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
+        <identifier name="DrawPanel"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
+        <identifier name="PanelHeight"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
+        <identifier name="PANEL_FLAGS"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
     <!-- And the rest should be ignored -->
     <rule>
       <match>
