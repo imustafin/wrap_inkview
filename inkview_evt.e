@@ -9,6 +9,7 @@ class
 
 feature
 	Evt_init: INTEGER = 21
+  Evt_show: INTEGER = 23
 	Evt_keypress: INTEGER = 25
 
 end
