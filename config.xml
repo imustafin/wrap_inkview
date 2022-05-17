@@ -168,6 +168,15 @@
     </rule>
 
 
+    <rule>
+      <match>
+        <identifier name="DialogSynchro"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+
     <!-- And the rest should be ignored -->
     <rule>
       <match>

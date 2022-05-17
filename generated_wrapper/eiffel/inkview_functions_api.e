@@ -174,6 +174,15 @@ feature -- Access
 			]"
 		end
 
+	dialog_synchro (icon: INTEGER; title: POINTER; text: POINTER; button1: POINTER; button2: POINTER; button3: POINTER): INTEGER
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				return DialogSynchro ((int)$icon, (char const*)$title, (char const*)$text, (char const*)$button1, (char const*)$button2, (char const*)$button3);
+			]"
+		end
+
 	set_panel_type (type: INTEGER)
 		external
 			"C inline use <inkview.h>"
