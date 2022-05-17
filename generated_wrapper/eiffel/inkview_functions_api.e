@@ -129,6 +129,15 @@ feature -- Access
 			instance_free: class
 		end
 
+	draw_string (x: INTEGER; y: INTEGER; s: POINTER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				DrawString ((int)$x, (int)$y, (char const*)$s);
+			]"
+		end
+
 	draw_text_rect (x: INTEGER; y: INTEGER; w: INTEGER; h: INTEGER; s: POINTER; flags: INTEGER): POINTER
 		external
 			"C inline use <inkview.h>"

@@ -137,6 +137,14 @@
 
     <rule>
       <match>
+        <identifier name="DrawString"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
         <identifier name="(Open|Close|Set)Font"/>
       </match>
       <wrapper type="default">
