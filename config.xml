@@ -151,6 +151,23 @@
       </wrapper>
     </rule>
 
+    <rule>
+      <match>
+        <identifier name="InvertArea"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
+        <identifier name="SoftUpdate"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+
     <!-- And the rest should be ignored -->
     <rule>
       <match>

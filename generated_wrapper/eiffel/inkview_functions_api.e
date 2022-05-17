@@ -106,6 +106,15 @@ feature -- Access
 			]"
 		end
 
+	invert_area (x: INTEGER; y: INTEGER; w: INTEGER; h: INTEGER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				InvertArea ((int)$x, (int)$y, (int)$w, (int)$h);
+			]"
+		end
+
 	open_font (name: POINTER; size: INTEGER; aa: INTEGER): POINTER
 		external
 			"C inline use <inkview.h>"
@@ -153,6 +162,15 @@ feature -- Access
 		alias
 			"[
 				FullUpdate ();
+			]"
+		end
+
+	soft_update
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				SoftUpdate ();
 			]"
 		end
 
