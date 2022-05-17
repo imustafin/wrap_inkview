@@ -121,7 +121,7 @@
 
     <rule>
       <match>
-        <identifier name="DrawRect(Round)?"/>
+        <identifier name="DrawRect"/>
       </match>
       <wrapper type="default">
       </wrapper>

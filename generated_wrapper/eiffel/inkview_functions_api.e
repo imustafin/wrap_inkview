@@ -97,15 +97,6 @@ feature -- Access
 			]"
 		end
 
-	draw_rect_round (anonymous_1: INTEGER; anonymous_2: INTEGER; anonymous_3: INTEGER; anonymous_4: INTEGER; anonymous_5: INTEGER; anonymous_6: INTEGER)
-		external
-			"C inline use <inkview.h>"
-		alias
-			"[
-				DrawRectRound ((int)$anonymous_1, (int)$anonymous_2, (int)$anonymous_3, (int)$anonymous_4, (int)$anonymous_5, (int)$anonymous_6);
-			]"
-		end
-
 	fill_area (x: INTEGER; y: INTEGER; w: INTEGER; h: INTEGER; color: INTEGER)
 		external
 			"C inline use <inkview.h>"
