@@ -190,6 +190,36 @@ feature -- Access
 			instance_free: class
 		end
 
+	open_menu_ex (menu: IMENUEX_S_STRUCT_API; pos: INTEGER; x: INTEGER; y: INTEGER; hproc: POINTER) 
+		do
+			c_open_menu_ex (menu.item, pos, x, y, hproc)
+		ensure
+			instance_free: class
+		end
+
+	open_context_menu (menu: ICONTEXT_MENU_S_STRUCT_API) 
+		do
+			c_open_context_menu (menu.item)
+		ensure
+			instance_free: class
+		end
+
+	create_context_menu (id: POINTER): POINTER
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				return CreateContextMenu ((char const*)$id);
+			]"
+		end
+
+	close_context_menu (menu: ICONTEXT_MENU_S_STRUCT_API) 
+		do
+			c_close_context_menu (menu.item)
+		ensure
+			instance_free: class
+		end
+
 	dialog_synchro (icon: INTEGER; title: POINTER; text: POINTER; button1: POINTER; button2: POINTER; button3: POINTER): INTEGER
 		external
 			"C inline use <inkview.h>"
@@ -264,6 +294,33 @@ feature -- Externals
 		alias
 			"[
 				OpenMenu ((imenu*)$menu, (int)$pos, (int)$x, (int)$y, (iv_menuhandler)$hproc);
+			]"
+		end
+
+	c_open_menu_ex (menu: POINTER; pos: INTEGER; x: INTEGER; y: INTEGER; hproc: POINTER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				OpenMenuEx ((imenuex*)$menu, (int)$pos, (int)$x, (int)$y, (iv_menuhandler)$hproc);
+			]"
+		end
+
+	c_open_context_menu (menu: POINTER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				OpenContextMenu ((icontext_menu const*)$menu);
+			]"
+		end
+
+	c_close_context_menu (menu: POINTER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				CloseContextMenu ((icontext_menu*)$menu);
 			]"
 		end
 

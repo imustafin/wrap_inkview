@@ -161,7 +161,15 @@
 
     <rule>
       <match>
-        <identifier name="OpenMenu"/>
+        <identifier name="OpenMenu(Ex)?"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
+        <identifier name="(Open|Create|Close)ContextMenu"/>
       </match>
       <wrapper type="default">
       </wrapper>
