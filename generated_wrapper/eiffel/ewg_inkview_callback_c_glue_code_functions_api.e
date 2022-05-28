@@ -80,6 +80,77 @@ feature -- Access
 			instance_free: class
 		end
 
+	set_iv_menuhandler_object (a_class: POINTER) 
+		do
+			c_set_iv_menuhandler_object (a_class)
+		ensure
+			instance_free: class
+		end
+
+	release_iv_menuhandler_object
+		external
+			"C inline use <ewg_inkview_callback_c_glue_code.h>"
+		alias
+			"[
+				release_iv_menuhandler_object ();
+			]"
+		end
+
+	get_iv_menuhandler_stub_1: POINTER
+		external
+			"C inline use <ewg_inkview_callback_c_glue_code.h>"
+		alias
+			"[
+				return get_iv_menuhandler_stub_1 ();
+			]"
+		end
+
+	get_iv_menuhandler_stub_2: POINTER
+		external
+			"C inline use <ewg_inkview_callback_c_glue_code.h>"
+		alias
+			"[
+				return get_iv_menuhandler_stub_2 ();
+			]"
+		end
+
+	get_iv_menuhandler_stub_3: POINTER
+		external
+			"C inline use <ewg_inkview_callback_c_glue_code.h>"
+		alias
+			"[
+				return get_iv_menuhandler_stub_3 ();
+			]"
+		end
+
+	set_iv_menuhandler_entry_1 (a_feature: POINTER) 
+		do
+			c_set_iv_menuhandler_entry_1 (a_feature)
+		ensure
+			instance_free: class
+		end
+
+	set_iv_menuhandler_entry_2 (a_feature: POINTER) 
+		do
+			c_set_iv_menuhandler_entry_2 (a_feature)
+		ensure
+			instance_free: class
+		end
+
+	set_iv_menuhandler_entry_3 (a_feature: POINTER) 
+		do
+			c_set_iv_menuhandler_entry_3 (a_feature)
+		ensure
+			instance_free: class
+		end
+
+	call_iv_menuhandler (a_function: POINTER; index: INTEGER) 
+		do
+			c_call_iv_menuhandler (a_function, index)
+		ensure
+			instance_free: class
+		end
+
 feature -- Externals
 
 	c_set_iv_handler_object (a_class: POINTER)
@@ -124,6 +195,51 @@ feature -- Externals
 		alias
 			"[
 				return call_iv_handler ((void*)$a_function, (int)$type, (int)$par1, (int)$par2);
+			]"
+		end
+
+	c_set_iv_menuhandler_object (a_class: POINTER)
+		external
+			"C inline use <ewg_inkview_callback_c_glue_code.h>"
+		alias
+			"[
+				set_iv_menuhandler_object ((void*)$a_class);
+			]"
+		end
+
+	c_set_iv_menuhandler_entry_1 (a_feature: POINTER)
+		external
+			"C inline use <ewg_inkview_callback_c_glue_code.h>"
+		alias
+			"[
+				set_iv_menuhandler_entry_1 ((void*)$a_feature);
+			]"
+		end
+
+	c_set_iv_menuhandler_entry_2 (a_feature: POINTER)
+		external
+			"C inline use <ewg_inkview_callback_c_glue_code.h>"
+		alias
+			"[
+				set_iv_menuhandler_entry_2 ((void*)$a_feature);
+			]"
+		end
+
+	c_set_iv_menuhandler_entry_3 (a_feature: POINTER)
+		external
+			"C inline use <ewg_inkview_callback_c_glue_code.h>"
+		alias
+			"[
+				set_iv_menuhandler_entry_3 ((void*)$a_feature);
+			]"
+		end
+
+	c_call_iv_menuhandler (a_function: POINTER; index: INTEGER)
+		external
+			"C inline use <ewg_inkview_callback_c_glue_code.h>"
+		alias
+			"[
+				call_iv_menuhandler ((void*)$a_function, (int)$index);
 			]"
 		end
 

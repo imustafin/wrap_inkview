@@ -161,21 +161,19 @@
 
     <rule>
       <match>
-        <identifier name="SoftUpdate"/>
+        <identifier name="OpenMenu"/>
       </match>
       <wrapper type="default">
       </wrapper>
     </rule>
-
 
     <rule>
       <match>
-        <identifier name="DialogSynchro"/>
+        <identifier name="iv_menuhandler"/>
       </match>
       <wrapper type="default">
       </wrapper>
     </rule>
-
 
     <!-- And the rest should be ignored -->
     <rule>

@@ -183,6 +183,13 @@ feature -- Access
 			]"
 		end
 
+	open_menu (menu: IMENU_S_STRUCT_API; pos: INTEGER; x: INTEGER; y: INTEGER; hproc: POINTER) 
+		do
+			c_open_menu (menu.item, pos, x, y, hproc)
+		ensure
+			instance_free: class
+		end
+
 	dialog_synchro (icon: INTEGER; title: POINTER; text: POINTER; button1: POINTER; button2: POINTER; button3: POINTER): INTEGER
 		external
 			"C inline use <inkview.h>"
@@ -248,6 +255,15 @@ feature -- Externals
 		alias
 			"[
 				SetFont ((ifont const*)$font, (int)$color);
+			]"
+		end
+
+	c_open_menu (menu: POINTER; pos: INTEGER; x: INTEGER; y: INTEGER; hproc: POINTER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				OpenMenu ((imenu*)$menu, (int)$pos, (int)$x, (int)$y, (iv_menuhandler)$hproc);
 			]"
 		end
 
