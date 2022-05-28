@@ -88,6 +88,15 @@ feature -- Access
 			]"
 		end
 
+	draw_line (x1: INTEGER; y1: INTEGER; x2: INTEGER; y2: INTEGER; color: INTEGER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				DrawLine ((int)$x1, (int)$y1, (int)$x2, (int)$y2, (int)$color);
+			]"
+		end
+
 	draw_rect (x: INTEGER; y: INTEGER; w: INTEGER; h: INTEGER; color: INTEGER)
 		external
 			"C inline use <inkview.h>"

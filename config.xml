@@ -121,23 +121,7 @@
 
     <rule>
       <match>
-        <identifier name="DrawRect"/>
-      </match>
-      <wrapper type="default">
-      </wrapper>
-    </rule>
-
-    <rule>
-      <match>
-        <identifier name="DrawTextRect"/>
-      </match>
-      <wrapper type="default">
-      </wrapper>
-    </rule>
-
-    <rule>
-      <match>
-        <identifier name="DrawString"/>
+        <identifier name="Draw(Rect|TextRect|String|Line)"/>
       </match>
       <wrapper type="default">
       </wrapper>
@@ -154,6 +138,22 @@
     <rule>
       <match>
         <identifier name="InvertArea"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
+        <identifier name="SoftUpdate"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+
+    <rule>
+      <match>
+        <identifier name="DialogSynchro"/>
       </match>
       <wrapper type="default">
       </wrapper>
