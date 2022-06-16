@@ -220,6 +220,22 @@ feature -- Access
 			instance_free: class
 		end
 
+	dialog (icon: INTEGER; title: STRING_8; text: STRING_8; button1: STRING_8; button2: STRING_8; hproc: POINTER) 
+		local
+			title_c_string: C_STRING
+			text_c_string: C_STRING
+			button1_c_string: C_STRING
+			button2_c_string: C_STRING
+		do
+			create title_c_string.make (title)
+			create text_c_string.make (text)
+			create button1_c_string.make (button1)
+			create button2_c_string.make (button2)
+			c_dialog (icon, title_c_string.item, text_c_string.item, button1_c_string.item, button2_c_string.item, hproc)
+		ensure
+			instance_free: class
+		end
+
 	dialog_synchro (icon: INTEGER; title: POINTER; text: POINTER; button1: POINTER; button2: POINTER; button3: POINTER): INTEGER
 		external
 			"C inline use <inkview.h>"
@@ -321,6 +337,15 @@ feature -- Externals
 		alias
 			"[
 				CloseContextMenu ((icontext_menu*)$menu);
+			]"
+		end
+
+	c_dialog (icon: INTEGER; title: POINTER; text: POINTER; button1: POINTER; button2: POINTER; hproc: POINTER)
+		external
+			"C inline use <inkview.h>"
+		alias
+			"[
+				Dialog ((int)$icon, (char const*)$title, (char const*)$text, (char const*)$button1, (char const*)$button2, (iv_dialoghandler)$hproc);
 			]"
 		end
 
